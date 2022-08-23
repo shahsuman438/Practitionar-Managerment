@@ -19,5 +19,5 @@ publicRouter.get("/", (req, res) => {
 });
 
 publicRouter.use("/auth", user);
-
+// protectedRouter.use("/")
 module.exports = publicRouter;
