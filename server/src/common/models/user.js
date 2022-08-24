@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const practitionarSchema = require("./practitionar").schema;
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -27,6 +27,7 @@ const userSchema = new mongoose.Schema({
   address: {
     type: String,
   },
+  practitionar: [practitionarSchema],
 });
 
 module.exports = mongoose.model("user", userSchema);

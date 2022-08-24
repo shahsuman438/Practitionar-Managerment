@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const user = require("./admin/auth/index");
+const practitionar = require("./practitionar/controller/practitionar");
 /**
  * Contains public API routes for the application.
  */
@@ -19,5 +20,6 @@ publicRouter.get("/", (req, res) => {
 });
 
 publicRouter.use("/auth", user);
+publicRouter.use("/practitionar", practitionar);
 // protectedRouter.use("/")
 module.exports = publicRouter;

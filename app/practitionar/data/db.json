@@ -1,0 +1,44 @@
+{
+  "practitionar": [
+    {
+      "id": 1,
+      "fullName": "Suman Kumar sah",
+      "email": "Suman@gmail.com",
+      "startTime": "03:00",
+      "endTime": "09:00",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71k%2BKbTBn5L._SL1500_.jpg"
+    },
+    {
+      "id": 2,
+      "fullName": "Suman Kumar sah",
+      "email": "Suman@gmail.com",
+      "startTime": "03:00",
+      "endTime": "09:00",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/31nj8q6QKAL.jpg"
+    },
+    {
+      "id": 3,
+      "fullName": "Suman Kumar sah",
+      "email": "Suman@gmail.com",
+      "startTime": "03:00",
+      "endTime": "09:00",
+      "image": "https://vlebazaar.in/image/cache/catalog//B08CFSZLQ4/Google-Pixel-4a-Just-Black-6GB-RAM-128GB-Storage-B08CFSZLQ4-1000x1000.jpg"
+    },
+    {
+      "id": 4,
+      "fullName": "Suman Kumar sah",
+      "email": "Suman@gmail.com",
+      "startTime": "03:00",
+      "endTime": "09:00",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71k%2BKbTBn5L._SL1500_.jpg"
+    },
+    {
+      "fullName": "suman",
+      "email": "ravi@gma.com",
+      "startTime": "2022-09-01",
+      "endTime": "2022-08-25",
+      "icuSpecialist": true,
+      "id": 5
+    }
+  ]
+}
