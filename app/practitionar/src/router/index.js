@@ -4,7 +4,7 @@ import Admin from "../pages/admin/Admin.vue";
 import Practitionar from "../pages/admin/Practitionar.vue";
 import PractitionarCreate from "../pages/admin/PractitionarCreate.vue";
 import PractitionarEdit from "../pages/admin/PractitionarEdit.vue";
-import pageNotFound from '../components/pageNotFound.vue'
+import pageNotFound from "../components/pageNotFound.vue";
 
 
 const routes = [
@@ -18,7 +18,7 @@ const routes = [
     name: "Admin",
     component: Admin,
     meta: {
-      isAuth: Boolean(!localStorage.getItem('AccessToken')),
+      isAuth: false,
     },
     children: [
       {
@@ -37,11 +37,9 @@ const routes = [
         component: PractitionarEdit,
         props: true,
       },
-      
     ],
-    
   },
-  { path: "/:pathMatch(.*)*",name: "pageNotFound", component: pageNotFound },
+  { path: "/:pathMatch(.*)*", name: "pageNotFound", component: pageNotFound },
 ];
 
 const router = createRouter({

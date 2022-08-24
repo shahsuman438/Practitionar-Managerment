@@ -10,7 +10,7 @@
     <input type="date" id="endDateTime" v-model="endDateTime" />
     <label for="icuSpecialist">ICU Specialist</label>
     <input type="checkbox" id="icuSpecialist" v-model="icuSpecialist" />
-    <button type="submit">Add</button>
+    <button type="submit" :disabled="!name || !email || !startDateTime || !endDateTime">Add</button>
 </form>
 </template>
 
