@@ -5,6 +5,7 @@ const app = express();
 const cors=require('cors')
 const publicRouter = require("./src/routes");
 const cookieParser=require('cookie-parser')
+const path=require('path')
 const corsOptions={
   origin:'*',
   credentials:true
@@ -24,6 +25,18 @@ app.use(express.json())
 app.use(cookieParser())
 // API Routes
 app.use("/api", publicRouter);
+console.log(process.env.NODE_ENV)
+if(process.env.NODE_ENV=="production"){
+  app.use(express.static(path.join(__dirname,"../app/practitionar/dist")));
+  app.get('*',(req,res)=>{ 
+      res.sendFile(path.join(__dirname,'../app/practitionar','dist','index.html'))
+  })
+}else{
+  app.get('/',(req,res)=>{
+      res.send("API Running")
+  })
+} 
+
 
 app.listen(app.get("port"), app.get("host"), () => {
   console.log(
