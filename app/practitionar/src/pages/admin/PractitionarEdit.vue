@@ -43,11 +43,10 @@ export default {
             } else {
                 authAxios.get(`practitionar/${route.params.id}`)
                     .then(result => {
-                        console.log(moment(String(result.data.startDateTime)).format('YYYY/MM/DD'))
                         name.value = result.data.name;
                         email.value = result.data.email;
-                        startDateTime.value = moment(String(result.data.startDateTime)).format('YYYY/MM/DD');
-                        endDateTime.value = moment(String(result.data.endDateTime)).format('YYYY/MM/DD');
+                        startDateTime.value = moment(String(result.data.startDateTime)).format('YYYY-MM-DD');
+                        endDateTime.value = moment(String(result.data.endDateTime)).format('YYYY-MM-DD');
                         icuSpecialist.value = result.data.icuSpecialist;
                     })
                     .catch(error => {

@@ -5,9 +5,9 @@
     <label for="email">Email</label>
     <input type="email" id="fullName" placeholder="eg. jhon@abc.com" v-model="email" />
     <label for="startDateTime">Start Time</label>
-    <input type="date" id="startDateTime" v-model="startDateTime" />
+    <input type="date" id="startDateTime" v-model="startDateTime" required  />
     <label for="endDateTime">End Time</label>
-    <input type="date" id="endDateTime" v-model="endDateTime" />
+    <input type="date" id="endDateTime" v-model="endDateTime" required/>
     <label for="icuSpecialist">ICU Specialist</label>
     <input type="checkbox" id="icuSpecialist" v-model="icuSpecialist" />
     <button type="submit" :disabled="!name || !email || !startDateTime || !endDateTime">Add</button>
