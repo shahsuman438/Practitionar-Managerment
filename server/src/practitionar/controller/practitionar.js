@@ -26,7 +26,7 @@ router.post("/", verifyToken, async (req, res) => {
   try {
     await userModel.findById(req.userId.subject).then(async (user) => {
       const practitionar = new Practitionar({
-        icuSpecialist: req.body.icuSpecialist,
+        icuSpecialist: req.body.icuSpecialist?true:false,
         name: req.body.name,
         email: req.body.email,
         startDateTime: req.body.startDateTime,
