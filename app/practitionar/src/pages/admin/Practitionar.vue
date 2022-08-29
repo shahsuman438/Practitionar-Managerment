@@ -17,8 +17,8 @@
             </td> -->
             <td>{{ practitionar.name }}</td>
             <td>{{ practitionar.email }}</td>
-            <td>{{ practitionar.startDateTime }}</td>
-            <td>{{ practitionar.endDateTime }}</td>
+            <td>{{ getDateFormated(practitionar.startDateTime) }}</td>
+            <td>{{ getDateFormated(practitionar.endDateTime) }}</td>
             <td>
                 <router-link :to="{ name: 'PractitionarEdit', params: { id: practitionar._id }}" class="btn">Edit</router-link>
                 <button @click="del(practitionar._id)" class="btn btn-del">
@@ -39,6 +39,8 @@ import authAxios from '../../interceptor/axios'
 import {
     useRouter
 } from "vue-router";
+import moment from 'moment'
+
 export default {
     name: "Practitionar",
 
@@ -71,9 +73,13 @@ export default {
                 })
 
         };
+        const getDateFormated=(date)=>{
+            return moment(String(date)).format('YYYY-MM-DD hh:mma')
+        }
         return {
             practitionars,
-            del
+            del,
+            getDateFormated
         };
     },
 };

@@ -5,9 +5,9 @@
     <label for="email">Email</label>
     <input type="email" id="fullName" placeholder="eg. jhon@abc.com" v-model="email" />
     <label for="startDateTime">Start Time</label>
-    <input type="date" id="startDateTime" v-model="startDateTime" />
+    <input type="datetime-local" id="startDateTime" v-model="startDateTime" required/>
     <label for="endDateTime">End Time</label>
-    <input type="date" id="endDateTime" v-model="endDateTime" />
+    <input type="datetime-local" id="endDateTime" v-model="endDateTime" required/>
     <label for="icuSpecialist">ICU Specialist</label>
     <input type="checkbox" id="icuSpecialist" v-model="icuSpecialist" />
     <button type="submit" :disabled="!name || !email || !startDateTime || !endDateTime">Update</button>
@@ -43,11 +43,10 @@ export default {
             } else {
                 authAxios.get(`practitionar/${route.params.id}`)
                     .then(result => {
-                        console.log(moment(String(result.data.startDateTime)).format('YYYY/MM/DD'))
                         name.value = result.data.name;
                         email.value = result.data.email;
-                        startDateTime.value = moment(String(result.data.startDateTime)).format('YYYY/MM/DD');
-                        endDateTime.value = moment(String(result.data.endDateTime)).format('YYYY/MM/DD');
+                        startDateTime.value = moment(String(result.data.startDateTime)).format('YYYY-MM-DD HH:mm:ss');
+                        endDateTime.value = moment(String(result.data.endDateTime)).format('YYYY-MM-DD HH:mm:ss');
                         icuSpecialist.value = result.data.icuSpecialist;
                     })
                     .catch(error => {
